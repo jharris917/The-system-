@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080b14">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="THE SYSTEM">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<title>THE SYSTEM — Hunter Development</title>
+<style>
+:root{--bg:#080b14;--panel:#111827;--panel2:#151f32;--line:#26334a;--text:#edf3ff;--muted:#9aa9c2;--blue:#63c7ff;--violet:#a88cff;--gold:#ffd36a;--green:#73e0ad;--red:#ff7d91}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#172c4c 0,#080b14 52%);color:var(--text);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh;padding:env(safe-area-inset-top) 14px calc(24px + env(safe-area-inset-bottom))}
+.wrap{max-width:760px;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;padding:18px 2px 12px}.eyebrow{color:var(--blue);font-size:11px;letter-spacing:2.8px;font-weight:800}.title{font-size:25px;font-weight:900;letter-spacing:1.2px;margin:2px 0}.sub{color:var(--muted);font-size:12px}.pill{border:1px solid #35506e;color:var(--blue);padding:6px 10px;border-radius:30px;font-size:11px;font-weight:800;letter-spacing:1px}
+.card{background:linear-gradient(145deg,rgba(21,31,50,.96),rgba(13,19,32,.98));border:1px solid var(--line);border-radius:17px;padding:16px;margin:12px 0;box-shadow:0 12px 35px #0003}.hero{position:relative;overflow:hidden;border-color:#31517a}.hero:after{content:"";position:absolute;width:190px;height:190px;border:1px solid #63c7ff22;border-radius:50%;right:-75px;top:-80px;box-shadow:0 0 0 22px #63c7ff09,0 0 0 48px #63c7ff06;pointer-events:none}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.rank{font-size:12px;letter-spacing:2px;color:var(--gold);font-weight:900}.level{font-size:36px;font-weight:900;line-height:1.1}.muted{color:var(--muted)}.xp{font-variant-numeric:tabular-nums;color:var(--blue);font-weight:800}.bar{height:9px;background:#26334a;border-radius:20px;overflow:hidden;margin:12px 0 6px}.fill{height:100%;background:linear-gradient(90deg,#4c9dff,#a88cff);border-radius:20px;transition:width .25s}.section{display:flex;justify-content:space-between;align-items:center;margin:22px 2px 8px}.section h2{font-size:15px;letter-spacing:1.5px;margin:0}.section small{color:var(--muted)}
+.quest{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #253149}.quest:last-child{border:0;padding-bottom:0}.check{appearance:none;width:22px;height:22px;flex:0 0 22px;border:1.5px solid #536783;border-radius:7px;background:#0c1422;display:grid;place-items:center;margin:0}.check:checked{background:#4eaff0;border-color:#4eaff0}.check:checked:after{content:"✓";color:#07101b;font-weight:900}.qname{font-weight:700}.qmeta{font-size:11px;color:var(--muted);margin-top:2px}.qxp{margin-left:auto;color:var(--gold);font-weight:800;font-size:12px;white-space:nowrap}.done .qname{text-decoration:line-through;color:#8290a7}.tabs{display:flex;gap:7px;overflow:auto;margin:14px 0}.tab{border:1px solid var(--line);border-radius:10px;padding:9px 13px;background:#0c1422;color:var(--muted);font-weight:800;font-size:12px;white-space:nowrap}.tab.active{background:#183653;color:var(--blue);border-color:#3d719c}.hidden{display:none!important}.statgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{background:#0c1422;border:1px solid #26334a;border-radius:12px;padding:12px}.stat b{display:block;font-size:20px}.stat span{font-size:10px;letter-spacing:1.2px;color:var(--muted);font-weight:800}.btn{border:1px solid #3c6b91;background:#163451;color:#dff4ff;border-radius:10px;padding:10px 13px;font-weight:800;font-size:12px}.btn.secondary{background:#101a2b;border-color:var(--line);color:var(--muted)}.btn.danger{border-color:#6c3445;color:#ff9eae;background:#291521}input,select{background:#0a1220;border:1px solid #34435d;color:var(--text);border-radius:9px;padding:10px;width:100%;font:inherit}.formrow{display:grid;grid-template-columns:1fr 85px;gap:8px;margin:10px 0}.note{font-size:12px;color:var(--muted);line-height:1.5}.footer{text-align:center;color:#65748c;font-size:10px;margin:24px 0 12px}.badge{font-size:10px;border:1px solid #3b526e;color:var(--blue);border-radius:20px;padding:4px 8px}.toast{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:#dff4ff;color:#08111c;padding:10px 16px;border-radius:12px;font-weight:800;font-size:12px;opacity:0;pointer-events:none;transition:opacity .2s}.toast.show{opacity:1}
+@media(min-width:650px){.statgrid{grid-template-columns:repeat(5,1fr)}}
+</style>
+</head>
+<body><main class="wrap">
+<header class="top"><div><div class="eyebrow">HUNTER DEVELOPMENT PROGRAM</div><div class="title">THE SYSTEM</div><div class="sub">Your life. Your level. Your rules.</div></div><span class="pill">SOLO MODE</span></header>
+<section class="card hero">
+ <div class="row"><div><div class="rank" id="rank">E-RANK HUNTER</div><div class="level">LVL <span id="level">1</span></div></div><div style="text-align:right"><div class="muted" style="font-size:11px">TOTAL EXPERIENCE</div><div class="xp" style="font-size:22px"><span id="total">0</span> XP</div></div></div>
+ <div class="bar"><div class="fill" id="bar" style="width:0%"></div></div><div class="row"><small class="muted" id="progress">0 / 2,000 XP to next level</small><small class="xp" id="pct">0%</small></div>
+</section>
+<div class="tabs"><button class="tab active" data-tab="quests">DAILY QUESTS</button><button class="tab" data-tab="status">STATUS</button><button class="tab" data-tab="custom">CUSTOM QUESTS</button></div>
+<section id="quests">
+ <div class="section"><h2>ACTIVE QUESTS</h2><small id="date"></small></div>
+ <div class="card" style="margin-top:8px"><div class="row"><b>Daily mission</b><span class="badge" id="dailycount">0 / 0 COMPLETE</span></div><div id="questlist"></div></div>
+ <div class="card"><div class="row"><b>WEEKLY BOSS</b><span class="badge" id="bosscount">0 / 4 WORKOUTS</span></div><p class="note">Complete four strength sessions this week to defeat the weekly boss.</p><div class="bar"><div class="fill" id="bossbar" style="width:0%"></div></div><div class="row"><small class="muted">Weekly reward</small><b class="xp">+300 XP</b></div></div>
+</section>
+<section id="status" class="hidden">
+ <div class="section"><h2>HUNTER STATUS</h2><small>ATTRIBUTE DEVELOPMENT</small></div>
+ <div class="card"><div class="statgrid" id="stats"></div></div>
+ <div class="card"><b>TRAINING BLUEPRINT</b><p class="note">Mon — Upper strength<br>Tue — Active recovery<br>Wed — Lower strength<br>Thu — Active recovery<br>Fri — Upper hypertrophy<br>Sat — Lower hypertrophy<br>Sun — Rest and planning</p><p class="note">Aim for progressive overload, good technique, enough food, and consistent sleep. Adjust training around recovery and your real schedule.</p></div>
+ <div class="card"><b>BACKUP YOUR SAVE</b><p class="note">Your progress is stored on this device. Export a backup before changing browsers or clearing website data.</p><div class="row"><button class="btn" id="export">EXPORT SAVE</button><label class="btn secondary" for="importfile">IMPORT SAVE</label><input id="importfile" type="file" accept="application/json" class="hidden"></div></div>
+</section>
+<section id="custom" class="hidden">
+ <div class="section"><h2>CREATE A QUEST</h2><small>RECURRING DAILY</small></div>
+ <div class="card"><p class="note">Add a custom daily mission. It will appear each day and can be checked off once per day.</p><div class="formrow"><input id="newname" placeholder="Quest name"><input id="newxp" type="number" min="1" max="500" value="20" aria-label="XP reward"></div><button class="btn" id="addquest">ADD QUEST</button><div id="customlist" style="margin-top:12px"></div></div>
+</section>
+<div class="footer">THE SYSTEM • PRIVATE LOCAL SAVE • NOT AFFILIATED WITH SOLO LEVELING</div>
+</main><div class="toast" id="toast"></div>
+<script>
+const XP_PER_LEVEL=2000;
+const ranks=[["E",1],["D",6],["C",13],["B",23],["A",36],["S",52],["NATIONAL",75]];
+const base=[
+ ["Make your bed","Start the day with a small win",10,"Discipline","all"],
+ ["Morning hygiene + skincare","Complete your morning routine",15,"Discipline","all"],
+ ["Drink water after waking","Start hydration early",15,"Vitality","all"],
+ ["Protein-rich breakfast","Fuel muscle growth",35,"Strength","all"],
+ ["Study for 15 minutes","Build your knowledge",35,"Intelligence","all"],
+ ["Hit your protein target","Aim for roughly 0.7–1.0 g per lb of body weight if appropriate",65,"Strength","all"],
+ ["Eat enough to support growth","Aim for a modest surplus if gaining muscle",55,"Strength","all"],
+ ["Meet your hydration goal","Drink steadily; don't force excessive water",40,"Vitality","all"],
+ ["Strength training","Complete your planned workout",110,"Strength","lift"],
+ ["Recovery walk or mobility","Keep your body moving",35,"Vitality","recovery"],
+ ["Get outside","Fresh air and daylight",25,"Vitality","all"],
+ ["Tidy for five minutes","Reset your space",15,"Discipline","all"],
+ ["Night hygiene","Brush, floss, and complete evening care",20,"Discipline","all"],
+ ["Prepare for tomorrow","Set out what you need",20,"Discipline","all"],
+ ["Sleep 7.5–9 hours","Prioritize recovery",55,"Vitality","all"]
+];
+const attrs=["Strength","Intelligence","Vitality","Discipline","Charisma"];
+const today=()=>new Date().toLocaleDateString("en-CA");
+const weekKey=()=>{const d=new Date();const x=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));x.setUTCDate(x.getUTCDate()+4-(x.getUTCDay()||7));const y=new Date(Date.UTC(x.getUTCFullYear(),0,1));return x.getUTCFullYear()+"-"+Math.ceil((((x-y)/86400000)+1)/7)};
+const blank=()=>({xp:0,attr:{Strength:0,Intelligence:0,Vitality:0,Discipline:0,Charisma:0},done:{},custom:[],workouts:0,week:weekKey(),bossPaid:false});
+let save;try{save=JSON.parse(localStorage.getItem("the-system-save")||"null")}catch(e){save=null}
+let state=save&&typeof save==="object"?save:blank();
+state.attr=state.attr||blank().attr;state.done=state.done||{};state.custom=state.custom||[];
+if(state.week!==weekKey()){state.week=weekKey();state.workouts=0;state.bossPaid=false}
+function persist(){localStorage.setItem("the-system-save",JSON.stringify(state))}
+function levelInfo(){const level=Math.floor(state.xp/XP_PER_LEVEL)+1;return {level,within:state.xp%XP_PER_LEVEL,rank:[...ranks].reverse().find(r=>level>=r[1])[0]}}
+function questsForToday(){const day=new Date().getDay();let q=base.filter(x=>x[4]==="all"||(x[4]==="lift"&&[1,3,5,6].includes(day))||(x[4]==="recovery"&&[0,2,4].includes(day)));return q.map((x,i)=>({id:"base"+i,name:x[0],desc:x[1],xp:x[2],attr:x[3]})).concat(state.custom.map(x=>({...x,desc:"Custom daily quest"})))}
+function toast(t){const el=document.getElementById("toast");el.textContent=t;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),1800)}
+function render(){
+ const info=levelInfo();document.getElementById("rank").textContent=info.rank+"-RANK HUNTER";document.getElementById("level").textContent=info.level;document.getElementById("total").textContent=state.xp.toLocaleString();document.getElementById("bar").style.width=(info.within/XP_PER_LEVEL*100)+"%";document.getElementById("progress").textContent=info.within.toLocaleString()+" / 2,000 XP to next level";document.getElementById("pct").textContent=Math.floor(info.within/XP_PER_LEVEL*100)+"%";
+ document.getElementById("date").textContent=new Date().toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"});const qs=questsForToday();const done=state.done[today()]||{};const count=qs.filter(q=>done[q.id]).length;document.getElementById("dailycount").textContent=count+" / "+qs.length+" COMPLETE";
+ document.getElementById("questlist").innerHTML=qs.map(q=>`<div class="quest ${done[q.id]?"done":""}"><input class="check" type="checkbox" data-id="${q.id}" ${done[q.id]?"checked":""}><div style="min-width:0"><div class="qname">${esc(q.name)}</div><div class="qmeta">${esc(q.desc||"Daily quest")} • ${esc(q.attr||"Discipline")}</div></div><span class="qxp">+${q.xp} XP</span></div>`).join("");
+ document.querySelectorAll(".check").forEach(c=>c.addEventListener("change",()=>toggle(c.dataset.id,c.checked)));
+ document.getElementById("bosscount").textContent=Math.min(state.workouts,4)+" / 4 WORKOUTS";document.getElementById("bossbar").style.width=(Math.min(state.workouts,4)/4*100)+"%";
+ document.getElementById("stats").innerHTML=attrs.map(a=>`<div class="stat"><span>${a.toUpperCase()}</span><b>${(state.attr[a]||0).toLocaleString()}</b><small class="muted">attribute XP</small></div>`).join("");
+ document.getElementById("customlist").innerHTML=state.custom.map((q,i)=>`<div class="quest"><div style="flex:1"><b>${esc(q.name)}</b><div class="qmeta">+${q.xp} XP • Daily</div></div><button class="btn danger" data-remove="${i}">REMOVE</button></div>`).join("");
+ document.querySelectorAll("[data-remove]").forEach(b=>b.addEventListener("click",()=>{state.custom.splice(+b.dataset.remove,1);persist();render()}));
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function toggle(id,on){state.done[today()]=state.done[today()]||{};const qs=questsForToday();const q=qs.find(x=>x.id===id);if(!q)return;if(on&&!state.done[today()][id]){state.done[today()][id]=true;state.xp+=q.xp;state.attr[q.attr]=(state.attr[q.attr]||0)+q.xp;if(id.startsWith("base")&&q.name==="Strength training"){state.workouts=(state.workouts||0)+1;if(state.workouts>=4&&!state.bossPaid){state.xp+=300;state.attr.Discipline+=300;state.bossPaid=true;toast("WEEKLY BOSS DEFEATED! +300 XP")}}}else if(!on&&state.done[today()][id]){state.done[today()][id]=false;state.xp=Math.max(0,state.xp-q.xp);state.attr[q.attr]=Math.max(0,(state.attr[q.attr]||0)-q.xp);if(id.startsWith("base")&&q.name==="Strength training"){state.workouts=Math.max(0,state.workouts-1);if(state.bossPaid){state.xp=Math.max(0,state.xp-300);state.attr.Discipline=Math.max(0,state.attr.Discipline-300);state.bossPaid=false}}}persist();render()}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===b));["quests","status","custom"].forEach(id=>document.getElementById(id).classList.toggle("hidden",id!==b.dataset.tab))}));
+document.getElementById("addquest").addEventListener("click",()=>{const name=document.getElementById("newname").value.trim();const xp=Math.max(1,Math.min(500,Number(document.getElementById("newxp").value)||20));if(!name){toast("Enter a quest name");return}state.custom.push({id:"custom"+Date.now(),name,xp,attr:"Discipline"});document.getElementById("newname").value="";persist();render();toast("Quest added")});
+document.getElementById("export").addEventListener("click",()=>{const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="the-system-save.json";a.click();URL.revokeObjectURL(a.href)});
+document.getElementById("importfile").addEventListener("change",async e=>{try{const v=JSON.parse(await e.target.files[0].text());if(!v||typeof v.xp!=="number"||!v.attr||!v.done)throw Error();state=v;persist();render();toast("Save imported")}catch(err){toast("Invalid save file")}e.target.value=""});
+persist();render();
+if("serviceWorker" in navigator && location.protocol.startsWith("http"))window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}));
+</script></body></html>
